@@ -1,0 +1,393 @@
+# OCT Image Classification Project - .gitignore
+
+# ============================================================
+# Python
+# ============================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# ============================================================
+# Jupyter Notebook
+# ============================================================
+
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Jupyter Notebook outputs (uncomment to keep outputs in git)
+# **/notebooks/*_output.ipynb
+
+# ============================================================
+# Virtual Environments
+# ============================================================
+
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.virtualenv/
+
+# Pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# ============================================================
+# IDEs and Editors
+# ============================================================
+
+# VSCode
+.vscode/
+.history/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+.idea_modules/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Atom
+.atom/
+
+# ============================================================
+# Operating System
+# ============================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================
+# Machine Learning / Data Science Specific
+# ============================================================
+
+# Datasets (too large for git)
+data/
+datasets/
+*.csv
+*.tsv
+*.dat
+*.data
+
+# IMPORTANT: Dataset should be downloaded separately
+# See README.md for download instructions
+
+# Trained Models (too large for git)
+models/*.h5
+models/*.hdf5
+models/*.pkl
+models/*.pickle
+models/*.pt
+models/*.pth
+models/*.ckpt
+models/*.pb
+models/oct_model_savedmodel/
+models/checkpoints/
+*.weights
+*.index
+*.meta
+
+# Keep model directory structure
+!models/.gitkeep
+
+# Model training outputs
+training_history.csv
+model_checkpoints/
+logs/
+runs/
+tensorboard/
+
+# Predictions and results
+results/
+predictions/
+output/
+*.json
+results.csv
+predictions.csv
+batch_results/
+
+# Temporary ML files
+*.npy
+*.npz
+*.h5tmp
+*.tmp
+
+# ============================================================
+# Credentials and Secrets
+# ============================================================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# API keys
+kaggle.json
+.kaggle/
+credentials.json
+secrets.json
+*.key
+*.pem
+*.crt
+
+# ============================================================
+# Temporary and Cache Files
+# ============================================================
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Cache
+.cache/
+*.cache
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# ============================================================
+# Documentation Build
+# ============================================================
+
+# Sphinx
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# MkDocs
+site/
+
+# ============================================================
+# Testing
+# ============================================================
+
+# pytest
+.pytest_cache/
+.tox/
+
+# Coverage
+.coverage
+htmlcov/
+coverage/
+
+# ============================================================
+# Project Specific
+# ============================================================
+
+# Downloaded dataset (5+ GB - don't commit!)
+data/kermany2018/
+data/OCT2017/
+data/*.zip
+data/*.tar.gz
+
+# Trained models (20+ MB each - don't commit!)
+models/best_oct_model.h5
+models/final_oct_model.h5
+models/training_history.csv
+models/classification_report.csv
+models/model_config.json
+
+# Example outputs
+examples/results.csv
+examples/*.json
+examples/output/
+
+# Jupyter notebook outputs (optional - uncomment to exclude)
+# notebooks/*_output.ipynb
+
+# WSL specific
+.wslconfig
+
+# Performance profiling
+*.prof
+*.lprof
+
+# Database files
+*.db
+*.sqlite
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ============================================================
+# Keep These Files
+# ============================================================
+
+# Keep empty directories
+!.gitkeep
+
+# Keep documentation
+!README.md
+!docs/*.md
+!examples/README.md
+
+# Keep configuration files
+!requirements.txt
+!setup.sh
+!.gitignore
+
+# Keep source code
+!*.py
+!*.ipynb
+
+# ============================================================
+# Optional: Uncomment to track large files with Git LFS
+# ============================================================
+
+# If you use Git LFS for large files, configure:
+# git lfs track "models/*.h5"
+# git lfs track "data/*.zip"
+
+# ============================================================
+# Notes
+# ============================================================
+
+# This .gitignore excludes:
+# 1. Dataset (download from Kaggle separately)
+# 2. Trained models (train locally or download from releases)
+# 3. Virtual environments (create with: python -m venv venv)
+# 4. IDE and OS specific files
+# 5. Credentials and secrets
+#
+# To download dataset:
+#   kaggle datasets download -d paultimothymooney/kermany2018
+#
+# To train model:
+#   jupyter notebook notebooks/oct_classification.ipynb
+#
+# See README.md and docs/ for complete setup instructions

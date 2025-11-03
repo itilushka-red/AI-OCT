@@ -1,21 +1,5 @@
-# OCT Image Classification Requirements
-# For CPU training on Intel Xeon or AMD GPU systems
-
-# Core ML Framework (choose ONE)
-# For Intel CPUs (RECOMMENDED for Xeon E5-2680 v4):
-# intel-tensorflow>=2.13.0
-
-# For standard CPU:
-# tensorflow-cpu>=2.13.0
-
-# For AMD GPU with ROCm (advanced, may not work in WSL):
-# tensorflow-rocm>=2.13.0
-
 # For NVIDIA GPU (not applicable for RX 5700 XT):
-# tensorflow>=2.13.0
-
-# Default: CPU-optimized TensorFlow
-tensorflow-cpu>=2.13.0
+tensorflow>=2.13.0
 
 # Image Processing
 Pillow>=10.0.0
@@ -38,3 +22,10 @@ ipykernel>=6.25.0
 
 # Optional: Kaggle API for dataset download
 kaggle>=1.5.16
+
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+pillow==10.1.0
+tensorflow==2.20.0
+numpy==1.26.2

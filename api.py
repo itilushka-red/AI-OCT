@@ -36,7 +36,7 @@ app.add_middleware(
 
 # Global variables
 MODEL = None
-MODEL_PATH = "models/simple_oct_final.h5"
+MODEL_PATH = "models/simple_oct_final_balanced.h5"
 IMG_SIZE = 224
 CLASS_NAMES = ['CNV', 'DME', 'DRUSEN', 'NORMAL']
 

@@ -19,15 +19,41 @@ export default function UploadImages() {
   };
 
   //Code for results here
-  const handleResults = () => {
-    const mockResults = [
-      { disease: "Glaucoma", probability: 75 },
-      { disease: "Cataract", probability: 20 },
-      { disease: "Macular Degeneration", probability: 50 },
-      { disease: "Diabetic Retinopathy", probability: 10 },
-    ];
-    setResults(mockResults);
-    setShowResults(true);
+  const handleResults = async () => {
+    if (images.length === 0) return;
+
+    try {
+      // Call the backend API with the first image
+      const formData = new FormData();
+      formData.append("file", images[0]);
+
+      // Use /api/predict for Docker, fallback to localhost for local dev
+      const apiUrl = process.env.REACT_APP_API_URL || "/api/predict";
+
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Transform API response to match the expected format
+        const apiResults = Object.entries(data.probabilities).map(
+          ([disease, probability]) => ({
+            disease,
+            probability: Number(probability),
+          })
+        );
+        // Sort by probability descending
+        apiResults.sort((a, b) => b.probability - a.probability);
+        setResults(apiResults);
+        setShowResults(true);
+      }
+    } catch (error) {
+      console.error("Error calling API:", error);
+      alert("Failed to connect to backend. Make sure the API is running on http://localhost:8000");
+    }
   };
 
   const handleRemove = (index: number) => {

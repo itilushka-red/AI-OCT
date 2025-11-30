@@ -22,7 +22,7 @@ print("="*70)
 print(f"TensorFlow version: {tf.__version__}\n")
 
 # Configuration
-MODEL_PATH = 'models/simple_oct_final.h5'
+MODEL_PATH = 'models/simple_oct_final_balanced.h5'
 TEST_DIR = 'C:/Users/illia/Desktop/AI/AI-OCT/data/kermany2018/OCT2017/test'
 VAL_DIR = 'C:/Users/illia/Desktop/AI/AI-OCT/data/kermany2018/OCT2017/val'
 IMG_SIZE = 224

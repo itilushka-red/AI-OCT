@@ -165,9 +165,9 @@ base_model = MobileNetV2(
 # Set the entire base model to trainable
 base_model.trainable = True
 
-# Freeze all but the last 20 layers
-print("Unfreezing the last 20 layers for fine-tuning...")
-for layer in base_model.layers[:-20]:
+# Freeze all but the last 5 layers
+print("Unfreezing the last 5 layers for fine-tuning...")
+for layer in base_model.layers[:-5]:
     layer.trainable = False
 
 inputs = keras.Input(shape=(IMG_SIZE, IMG_SIZE, 3))
@@ -283,12 +283,10 @@ try:
     print("Training curves saved to: models/training_curves_balanced.png\n")
 
     print("="*70)
-    print("ALL DONE! 🎉")
+    print("ALL DONE")
     print("="*70)
-    print("\nYour trained model is ready at:")
+    print("\nTrained model is ready at:")
     print("  models/simple_oct_final_balanced.h5")
-    print("\nTo use it:")
-    print("  python predict.py path/to/image.jpg --model models/simple_oct_final_balanced.h5")
     print("="*70)
 
 except KeyboardInterrupt:

@@ -115,7 +115,7 @@ python train_class_balance.py
 
 Training configuration:
 - **Base Model**: MobileNetV2 (ImageNet pretrained)
-- **Fine-tuned Layers**: Last 20 layers
+- **Fine-tuned Layers**: Last 5 layers
 - **Optimizer**: Adam (lr=0.0001)
 - **Batch Size**: 16
 - **Epochs**: 20
